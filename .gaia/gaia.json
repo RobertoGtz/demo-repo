@@ -1,0 +1,57 @@
+{
+  "name": "demo-repo",
+  "platform": "flutter",
+  "version": "1.0.0",
+  "description": "Gaia plugin config for the Flutter demo repo",
+
+  "config": {
+    "maxFilesToTouch": 6,
+    "requireTests": true,
+    "targetBranch": "develop",
+
+    "architecture": "clean_mvvm",
+
+    "patterns": {
+      "screen":     "lib/src/presentation/screens/{name}_screen.dart",
+      "widget":     "lib/src/presentation/widgets/{name}_widget.dart",
+      "viewmodel":  "lib/src/presentation/viewmodels/{name}_viewmodel.dart",
+      "model":      "lib/src/domain/models/{name}.dart",
+      "repository": "lib/src/data/repositories/{name}_repository.dart",
+      "service":    "lib/src/data/services/{name}_service.dart",
+      "test":       "test/{feature}/{name}_test.dart"
+    },
+
+    "naming": {
+      "classes":   "PascalCase",
+      "files":     "snake_case",
+      "variables": "camelCase",
+      "constants": "kCamelCase"
+    },
+
+    "codeRules": [
+      "All screens must extend StatelessWidget or use ConsumerWidget — no StatefulWidget unless justified",
+      "State management via provider or riverpod only — do NOT use setState in screen-level widgets",
+      "Never import dart:io directly — use platform abstractions",
+      "All public methods and classes must have dartdoc comments",
+      "No hardcoded strings — use an AppStrings constant class",
+      "Colors must come from Theme.of(context) — no hardcoded Color() values",
+      "Navigation must use named routes or GoRouter — no direct MaterialPageRoute pushes",
+      "Repository pattern required: UI must never call services directly"
+    ],
+
+    "testRules": [
+      "Every new screen must have a corresponding widget test in test/",
+      "Every new ViewModel must have a unit test",
+      "Test file naming: {feature_name}_test.dart",
+      "Use flutter_test package — no third-party test runners",
+      "Tests must cover: happy path, empty state, and error state",
+      "Mocks must use mockito or mocktail — no manual fakes unless simple"
+    ],
+
+    "forbidden": [
+      "lib/main.dart — do not modify the app entry point",
+      "pubspec.yaml — do not add dependencies without explicit task",
+      "android/", "ios/", "web/", "macos/", "linux/", "windows/"
+    ]
+  }
+}
