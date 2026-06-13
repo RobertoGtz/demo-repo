@@ -13,3 +13,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
+// Added PromoBanner integration
