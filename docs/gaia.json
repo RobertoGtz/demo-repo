@@ -1,0 +1,41 @@
+{
+  "name": "demo-repo",
+  "platform": "flutter",
+  "version": "1.0.0",
+  "description": "Gaia plugin config for the Flutter demo repo",
+
+  "config": {
+    "maxFilesToTouch": 6,
+    "requireTests": true,
+    "targetBranch": "develop",
+    "architecture": "clean_mvvm",
+
+    "patterns": {
+      "screen":     "lib/src/presentation/screens/{name}_screen.dart",
+      "widget":     "lib/src/presentation/widgets/{name}_widget.dart",
+      "viewmodel":  "lib/src/presentation/viewmodels/{name}_viewmodel.dart",
+      "model":      "lib/src/domain/models/{name}.dart",
+      "repository": "lib/src/data/repositories/{name}_repository.dart",
+      "service":    "lib/src/data/services/{name}_service.dart",
+      "test":       "test/{feature}/{name}_test.dart"
+    },
+
+    "naming": {
+      "classes":   "PascalCase",
+      "files":     "snake_case",
+      "variables": "camelCase",
+      "constants": "kCamelCase"
+    },
+
+    "forbidden": [
+      "lib/main.dart",
+      "pubspec.yaml",
+      "android/",
+      "ios/",
+      "web/",
+      "macos/",
+      "linux/",
+      "windows/"
+    ]
+  }
+}
