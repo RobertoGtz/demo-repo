@@ -1,8 +1,14 @@
 {
   "name": "demo-repo",
   "platform": "flutter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Gaia plugin config for the Flutter demo repo",
+
+  "agents": {
+    "specAuthor":  "flutter-spec-author.ts",
+    "implementer": "flutter-implementer.ts",
+    "reviewer":    "flutter-reviewer.ts"
+  },
 
   "config": {
     "maxFilesToTouch": 6,
