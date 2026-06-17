@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'src/presentation/screens/home_screen.dart';
+import 'src/presentation/screens/settings_screen.dart';
 
 void main() {
   runApp(const DemoApp());
@@ -11,9 +11,15 @@ class DemoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Demo App',
-      home: HomeScreen(),
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.system, // Automatically switch based on system settings
+      home: const HomeScreen(),
+      routes: {
+        '/settings': (context) => const SettingsScreen(),
+      },
     );
   }
 }
