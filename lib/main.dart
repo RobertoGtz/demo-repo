@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'src/presentation/screens/home_screen.dart';
+import 'src/presentation/screens/settings_screen.dart';
 
 void main() {
   runApp(const DemoApp());
@@ -11,9 +12,12 @@ class DemoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Demo App',
-      home: HomeScreen(),
+      home: const HomeScreen(),
+      routes: {
+        '/settings': (context) => const SettingsScreen(),
+      },
     );
   }
 }
